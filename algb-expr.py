@@ -1,12 +1,13 @@
-AlgExpr = input("Enter algebric expression: ")
-ConvertedExpr = ''
-for ch in AlgExpr:
-    if ch>='0' and ch<='9':
-        ConvertedExpr = ConvertedExpr + ch
-    elif ch=='(':
-        ConvertedExpr = ConvertedExpr + '*' + ch
-    elif ch>='a' and ch<='z' and ConvertedExpr[-1]!='(':
-        ConvertedExpr = ConvertedExpr + '*' + ch
-    else:
-        ConvertedExpr = ConvertedExpr + ch
-print("Converted expression is :",ConvertedExpr)
+import re
+
+# ask the user for an algebraic expression
+expression = input("Enter an algebraic expression: ")
+
+# use a regular expression to find all instances of a number followed by a variable
+pattern = r'(\d)([a-zA-Z])'
+
+# replace each instance with the number and variable separated by a multiplication symbol
+expression = re.sub(pattern, r'\1*\2', expression)
+
+# print the modified expression
+print(f"Modified expression: {expression}")
