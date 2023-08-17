@@ -4,10 +4,12 @@ def is_even_num(l):
         if n % 2 == 0:
             enum.append(n)
     return enum
-num = list(int(input("Enter numbers: ").split()))
+
+num = int(input("Enter the number of elements: "))
 lst = []
-for i in range(0,num):
-    ele = int(input())
-    ele.append(lst)
-    
-print(is_even_num(lst))
+for i in range(num):
+    ele = int(input("Enter element: "))
+    lst.append(ele)
+
+print("Original list:", lst)
+print("Even numbers:", is_even_num(lst))
