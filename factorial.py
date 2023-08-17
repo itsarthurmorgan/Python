@@ -8,4 +8,7 @@ def factorial1(n):
 # Example usage
 n = int(input("Enter a number: "))
 
-print(factorial1(n))  # Output: 120
+if (n < 0):
+    print("Invalid, Enter postive elements")
+else:
+    print(factorial1(n)) 
