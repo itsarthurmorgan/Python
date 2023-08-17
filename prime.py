@@ -1,15 +1,10 @@
-def prime(number):
-    is_prime = True
-    for i in range(2,number):
-        if number % i == 0:
-            is_prime = False
-            
-    if is_prime:
-        print("It's a prime number")
-        
-    else:
-        print("It's not a prime number.")
+print("Prime numbers less than 20 are:")
 
+for num in range(20):
+    if (num > 1):
+        for j in range(2, num):
 
-n = int(input("Check this number: "))
-prime(number=n)
+            if (num % j == 0):
+                break
+        else:
+            print(num)
